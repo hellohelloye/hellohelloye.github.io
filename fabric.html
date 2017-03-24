@@ -42,7 +42,7 @@ The code above alone perform wrongly. The crashlytics receive debug mode crash d
 <br><br>
 3) The following is three alternative methods to prevent the solution. My questions would be what exactly is CrashlyticsCore library do? I searched it has been deprecated, but somehow I could still use it. I personally feel the inner crashlytics libraries are a little bit messy. and the document is outdated! I strongly suggest update the documents! My current running environment Fabric Crashlytics 2.6.7.
 <br><br>
-a.
+(a)
 if (!BuildConfig.BUILD_TYPE.equals("debug")) {
             Crashlytics crashlyticsKit = new Crashlytics.Builder()
                     .core(new CrashlyticsCore.Builder().build())
@@ -50,12 +50,12 @@ if (!BuildConfig.BUILD_TYPE.equals("debug")) {
             Fabric.with(this, crashlyticsKit);
  }
 <br><br>
-b.
+(b)
 if (!BuildConfig.BUILD_TYPE.equals("debug")) {
             Fabric.with(this, new Crashlytics());
  }
 <br><br>
-c
+(c)
 if (!BuildConfig.DEBUG) {
             // Set up Crashlytics, disabled for debug builds
             Crashlytics crashlyticsKit = new Crashlytics.Builder()
