@@ -16,17 +16,17 @@ android {
           // Disable fabric build ID generation for debug builds
           ext.enableCrashlytics = false
           ...
-// Set up Crashlytics, disabled for debug builds
+<br>// Set up Crashlytics, disabled for debug builds
 Crashlytics crashlyticsKit = new Crashlytics.Builder()
     .core(new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build())
     .build();
 
 // Initialize Fabric with the debug-disabled crashlytics.
 Fabric.with(this, crashlyticsKit);
-	<br>		
+	<br><br>		
 			After I did the above implementation, I got issue similar to <br>
 <a href="https://twittercommunity.com/t/ext-enablecrashlytics-false-causes-this-app-relies-on-crashlytics/59128">crashed resign in fabric account</a>
-<br>
+<br><br>
 2) Then I removed <ext.enableCrashlytics = false>, It built succeed. <br>BUT
 Crashlytics crashlyticsKit = new Crashlytics.Builder()
     .core(new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build())
@@ -35,13 +35,13 @@ Crashlytics crashlyticsKit = new Crashlytics.Builder()
 // Initialize Fabric with the debug-disabled crashlytics.
 Fabric.with(this, crashlyticsKit);
 			
-	<br>
+	<br><br>
 The code above alone perform wrongly. The crashlytics receive debug mode crash data on fabric. I found out  BuildConfig.DEBUG variable is changeable. 
 <br>
 <a href="http://stackoverflow.com/questions/9855834/when-does-adt-set-buildconfig-debug-to-false">BuildConfig Valriable changeable</a>
-<br>
+<br><br>
 3) The following is three alternative methods to prevent the solution. My questions would be what exactly is CrashlyticsCore library do? I searched it has been deprecated, but somehow I could still use it. I personally feel the inner crashlytics libraries are a little bit messy. and the document is outdated! I strongly suggest update the documents! My current running environment Fabric Crashlytics 2.6.7.
-<br>
+<br><br>
 a.
 if (!BuildConfig.BUILD_TYPE.equals("debug")) {
             Crashlytics crashlyticsKit = new Crashlytics.Builder()
@@ -49,12 +49,12 @@ if (!BuildConfig.BUILD_TYPE.equals("debug")) {
                     .build();
             Fabric.with(this, crashlyticsKit);
  }
-<br>
+<br><br>
 b.
 if (!BuildConfig.BUILD_TYPE.equals("debug")) {
             Fabric.with(this, new Crashlytics());
  }
-<br>
+<br><br>
 c
 if (!BuildConfig.DEBUG) {
             // Set up Crashlytics, disabled for debug builds
@@ -63,7 +63,7 @@ if (!BuildConfig.DEBUG) {
                     .build();
             Fabric.with(this, crashlyticsKit);
  }
-<br>
+<br><br>
 I am writing to ask what would be the best solution facing my current issue. 		
 		</p>
 		
