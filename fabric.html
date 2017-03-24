@@ -8,7 +8,7 @@
 		Lately, I was working on Crashlytics, Fabric implementation, I followed all the steps on the fabric crashlytics implementation, it all works beautifully except one issue that confused me for a little bit time. 
 
 1) Based on the document description about disable Crashlytics for Debug mode:
-https://docs.fabric.io/android/crashlytics/build-tools.html#disable-crashlytics-for-debug-builds
+<a href="https://docs.fabric.io/android/crashlytics/build-tools.html#disable-crashlytics-for-debug-builds">disable crashlytics for debug builds-fabric</a>
 
 android {
     buildTypes {
@@ -24,7 +24,7 @@ Crashlytics crashlyticsKit = new Crashlytics.Builder()
 // Initialize Fabric with the debug-disabled crashlytics.
 Fabric.with(this, crashlyticsKit);
 After I did the above implementation, I got issue similar to 
-https://twittercommunity.com/t/ext-enablecrashlytics-false-causes-this-app-relies-on-crashlytics/59128
+<a href="https://twittercommunity.com/t/ext-enablecrashlytics-false-causes-this-app-relies-on-crashlytics/59128">crashed resign in fabric account</a>
 
 2) Then I removed <ext.enableCrashlytics = false>, It built succeed. BUT
 Crashlytics crashlyticsKit = new Crashlytics.Builder()
@@ -36,7 +36,7 @@ Fabric.with(this, crashlyticsKit);
 
 The code above alone perform wrongly. The crashlytics receive debug mode crash data on fabric. I found out  BuildConfig.DEBUG variable is changeable. 
 
-http://stackoverflow.com/questions/9855834/when-does-adt-set-buildconfig-debug-to-false
+<a href="http://stackoverflow.com/questions/9855834/when-does-adt-set-buildconfig-debug-to-false">BuildConfig Valriable changeable</a>
 
 
 3) The following is three alternative methods to prevent the solution. My questions would be what exactly is CrashlyticsCore library do? I searched it has been deprecated, but somehow I could still use it. I personally feel the inner crashlytics libraries are a little bit messy. and the document is outdated! I strongly suggest update the documents! My current running environment Fabric Crashlytics 2.6.7.
