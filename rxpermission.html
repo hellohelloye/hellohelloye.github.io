@@ -5,17 +5,18 @@
 	</head>
 	<body>	
 		<p>
-<a href="https://github.com/tbruyelle/RxPermissions">RxPermission</a> is an elegant Android acquire permissions tool. I think RxPermission is brilliant. Lately, I was trying to implement the RxPermission library followed by your GitHub repository. 
+<a href="https://github.com/tbruyelle/RxPermissions">RxPermission</a> is an elegant Android acquire permissions tool. I think RxPermission is brilliant. 
+			<br>Lately, I was trying to implement the RxPermission library followed by your GitHub repository. 
 <br>But I met quite a few issue, I hope my suggestion would be convenient for more developers. 
 I realize it mentioned RxJava, but I think it is better also put RxJava dependences library together with rxpermissions:
-<br>compile 'com.tbruyelle.rxpermissions:rxpermissions:0.9.3@aar'
-<br>compile 'io.reactivex:rxjava:1.2.2'
-<br>
-The missing of rxjava dependence took me a little bit while to figure it out.
-The second issue is quite important about your sample code. The reason I am applying RxPermission library is to expect a more straightforward result about a default pop-up window from google to ask permission from user. But from your sample code, I found you create your own customer pop-up window to enable the rxPermission.request permission function. I think this approach is very silly. 
+<br><span class="redText">compile 'com.tbruyelle.rxpermissions:rxpermissions:0.9.3@aar'</span>
+<br><span class="redText">compile 'io.reactivex:rxjava:1.2.2'</span>
+<br>The missing of rxjava dependence took me a little bit while to figure it out.
+The second issue is quite important about your sample code. The reason I am applying RxPermission library is to expect a more straightforward result about a default pop-up window from google to ask permission from user. 
+<br>But from your sample code, I found you create your own customer pop-up window to enable the rxPermission.request permission function. I think this approach is very silly. 
 
-<br>I think the best way to apply rxpermission with default google permission acquire window would be connected with manifests 
-<br><uses-permission android:name="android.permission.RECORD_AUDIO" />as example.  
+<br>I think the best way to apply rxpermission with default google permission acquire window would be connected with <span class="redText">manifests</span> 
+<br><span class="redText">uses-permission android:name="android.permission.RECORD_AUDIO"</span>as example.  
 		</p>
 		
 		<footer>
