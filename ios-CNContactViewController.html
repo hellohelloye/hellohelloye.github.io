@@ -3,18 +3,18 @@
 	<head>
 		<title>RxPermission</title>
 	</head>
-	<body>	
+	<body>	<code>
 in AppDelegate.swift<br>
 extension UIApplication {<br>
     var statusBarView: UIView? {<br>
         return value(forKey: "statusBar") as? UIView<br>
     }<br>
-}<br>
-in your main ViewController.swift<br>
+}<br></code>
+in your main ViewController.swift<br><code>
 var appDelegate: AppDelegate? {  <br>
         UIApplication.shared.statusBarView?.backgroundColor = UIColor.red  <br>
         return UIApplication.shared.delegate as? AppDelegate  <br>
-    }  <br>
+    }  <br></code>
 
 
 	<a href="https://github.com/hellohelloye/hellohelloye.github.io/blob/master/iOS-CNContactVC.swift">CNContactViewController sample code</a>	
