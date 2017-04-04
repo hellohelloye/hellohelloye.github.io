@@ -5,16 +5,16 @@
 	</head>
 	<body>	<code>
 in AppDelegate.swift<br>
-extension UIApplication {<br>
-    var statusBarView: UIView? {<br>
-        return value(forKey: "statusBar") as? UIView<br>
-    }<br>
-}<br></code>
-in your main ViewController.swift<br><code>
-var appDelegate: AppDelegate? {  <br>
-        UIApplication.shared.statusBarView?.backgroundColor = UIColor.red  <br>
-        return UIApplication.shared.delegate as? AppDelegate  <br>
-    }  <br></code>
+extension UIApplication {
+    var statusBarView: UIView? {
+        return value(forKey: "statusBar") as? UIView
+    }
+}</code>
+<br>in your main ViewController.swift<code>
+var appDelegate: AppDelegate? {  
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.red  
+        return UIApplication.shared.delegate as? AppDelegate  
+    }  </code>
 
 
 	<a href="https://github.com/hellohelloye/hellohelloye.github.io/blob/master/iOS-CNContactVC.swift">CNContactViewController sample code</a>	
