@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>RxPermission</title>
+	</head>
+	<body>	
+in AppDelegate.swift<br>
+extension UIApplication {<br>
+    var statusBarView: UIView? {<br>
+        return value(forKey: "statusBar") as? UIView<br>
+    }<br>
+}<br>
+in your main ViewController.swift<br>
+var appDelegate: AppDelegate? {  <br>
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.red  <br>
+        return UIApplication.shared.delegate as? AppDelegate  <br>
+    }  <br>
+
+
+		
+    
+    
+		<footer>
+    		<ul>
+        		<li><a href="applefan.ye@gmail.com">email</a></li>
+        		<li><a href="https://github.com/hellohelloye">github.com/hellohelloye</a></li>
+			</ul>
+		</footer>
+	</body>
+</html>
